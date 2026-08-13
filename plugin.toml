@@ -1,0 +1,45 @@
+[plugin]
+id = "shell_cmd"
+name = "猫娘命令操作器"
+description = "让猫娘在对话里执行 Shell / CMD / PowerShell 命令，并管理本地文件。支持超时、危险命令拦截、输出截断等安全围栏。"
+author = "baixiangyuan"
+version = "0.1.0"
+entry = "plugins.shell_cmd:ShellCmdPlugin"
+license = "MIT"
+
+[plugin.i18n]
+enabled = true
+default_locale = "zh-CN"
+locales_dir = "plugins/shell_cmd/i18n"
+
+[plugin.sdk]
+min_sdk_version = "0.1.0"
+
+[plugin_runtime]
+enabled = true
+auto_start = true
+
+[plugin.store]
+enabled = true
+
+[shell_cmd]
+timeout = 30
+workdir = ""
+allow_dangerous = false
+max_output_lines = 200
+blacklist = [
+    "rm -rf /",
+    "format ",
+    "mkfs",
+    "shutdown",
+    "restart",
+    ":(){",
+    "dd if=",
+    "> /dev/sda",
+    "chmod -R 000",
+    "del /f /s /q",
+    "rd /s /q",
+    "rmdir /s /q",
+    "curl | sh",
+    "wget | sh",
+]
