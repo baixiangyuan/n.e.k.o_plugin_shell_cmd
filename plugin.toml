@@ -3,7 +3,7 @@ name = "猫娘命令操作器"
 description = "让猫娘在对话里执行 Shell / CMD / PowerShell 命令，并管理本地文件。支持超时、危险命令拦截、输出截断等安全围栏。"
 short_description = "Catgirl shell/cmd operator: run Shell/CMD/PowerShell in chat, manage local files, with timeout & dangerous-command guard."
 keywords = ["shell", "cmd", "命令", "猫娘", "catgirl", "powershell", "文件", "操作器"]
-version = "0.1.0"
+version = "1.0.0"
 id = "shell_cmd"
 entry = "plugins.shell_cmd:ShellCmdPlugin"
 
