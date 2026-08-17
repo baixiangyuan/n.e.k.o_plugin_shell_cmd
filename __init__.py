@@ -92,7 +92,7 @@ class ShellCmdPlugin(NekoPluginBase):
             f"ShellCmd 插件已启动: timeout={timeout}s, workdir={workdir or 'CWD'}, "
             f"allow_dangerous={allow_dangerous}"
         )
-        return Ok({"status": "running", "version": "0.1.0"})
+        return Ok({"status": "running", "version": "1.0.0"})
 
     @lifecycle(id="shutdown")
     def shutdown(self, **_):
@@ -285,7 +285,7 @@ class ShellCmdPlugin(NekoPluginBase):
             ex = self._get_executor()
             return Ok(
                 {
-                    "version": "0.1.0",
+                    "version": "1.0.0",
                     "timeout": ex.timeout,
                     "workdir": ex.workdir,
                     "allow_dangerous": ex.allow_dangerous,

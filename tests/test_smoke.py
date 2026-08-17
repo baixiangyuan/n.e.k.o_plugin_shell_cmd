@@ -24,7 +24,7 @@ class TestPluginStructure(unittest.TestCase):
         )
 
     def test_entry_module_exists(self):
-        entry = os.path.join(ROOT, "plugins", PLUGIN_ID, "__init__.py")
+        entry = os.path.join(ROOT, "__init__.py")
         self.assertTrue(os.path.isfile(entry), f"入口模块缺失: {entry}")
 
     def test_plugin_toml_entry(self):
@@ -35,15 +35,15 @@ class TestPluginStructure(unittest.TestCase):
         entry = data["plugin"]["entry"]
         self.assertEqual(
             entry,
-            f"plugins.{PLUGIN_ID}:ShellCmdPlugin",
-            f"plugin.toml entry 应为 plugins.{PLUGIN_ID}:ShellCmdPlugin",
+            f"plugin.plugins.{PLUGIN_ID}:ShellCmdPlugin",
+            f"plugin.toml entry 应为 plugin.plugins.{PLUGIN_ID}:ShellCmdPlugin",
         )
 
     def test_core_executor(self):
         # 用 importlib 直接加载 shell_core.py，避免触发 __init__.py 对 plugin.sdk 的依赖
         import importlib.util
 
-        core_path = os.path.join(ROOT, "plugins", PLUGIN_ID, "shell_core.py")
+        core_path = os.path.join(ROOT, "shell_core.py")
         spec = importlib.util.spec_from_file_location("shell_core_test", core_path)
         core_mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(core_mod)
