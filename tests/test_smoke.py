@@ -35,8 +35,8 @@ class TestPluginStructure(unittest.TestCase):
         entry = data["plugin"]["entry"]
         self.assertEqual(
             entry,
-            f"plugin.plugins.{PLUGIN_ID}:ShellCmdPlugin",
-            f"plugin.toml entry 应为 plugin.plugins.{PLUGIN_ID}:ShellCmdPlugin",
+            f"plugins.{PLUGIN_ID}:ShellCmdPlugin",
+            f"plugin.toml entry 应为 plugins.{PLUGIN_ID}:ShellCmdPlugin",
         )
 
     def test_core_executor(self):

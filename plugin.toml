@@ -5,7 +5,7 @@ short_description = "Catgirl shell/cmd operator: run Shell/CMD/PowerShell in cha
 keywords = ["shell", "cmd", "命令", "猫娘", "catgirl", "powershell", "文件", "操作器"]
 version = "1.0.0"
 id = "shell_cmd"
-entry = "plugin.plugins.shell_cmd:ShellCmdPlugin"
+entry = "plugins.shell_cmd:ShellCmdPlugin"
 
 [plugin.author]
 name = "baixiangyuan"
